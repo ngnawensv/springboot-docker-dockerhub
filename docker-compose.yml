@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  springboot-docker-dockerhub:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: springboot-docker-dockerhub-container
+    ports:
+      - "8080:8080"
+    networks:
+      - springboot-docker-dockerhub-network
+
+networks:
+  springboot-docker-dockerhub-network:
+    driver: bridge
